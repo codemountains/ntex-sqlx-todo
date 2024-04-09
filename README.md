@@ -13,5 +13,6 @@ Todo application using [Ntex](https://ntex.rs/) and [SQLx](https://github.com/la
 ## Debug
 
 ```shell
-DATABASE_URL={your_db_url} cargo run
+cp .env.example .env
+cargo run
 ```
