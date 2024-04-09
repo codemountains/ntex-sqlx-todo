@@ -69,7 +69,7 @@ async fn search(
             where
                 $1 = ''
                 or
-                ($1 != '' and status = $1)
+                status = $1
         "#,
         search_status
     )
