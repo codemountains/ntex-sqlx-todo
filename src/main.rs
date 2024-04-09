@@ -8,10 +8,14 @@ use crate::todo::find::find_todos;
 use crate::todo::get::get_todo;
 use crate::todo::update::update_todo;
 use ntex::web;
+use dotenvy::dotenv;
 
 #[ntex::main]
 async fn main() -> std::io::Result<()> {
+    dotenv().expect(".env file not found");
     let db = Db::new().await;
+
+    println!("start application...");
 
     web::HttpServer::new(move || {
         web::App::new()
